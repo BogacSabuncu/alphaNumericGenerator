@@ -1,0 +1,53 @@
+<!-- <div>
+  <form id="phone_form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Phone Number:
+      </label>
+    </div>
+    <div>
+      <input formControlName="phonenumber">
+      <span *ngIf="(phonenumber.dirty || phonenumber.touched) && phonenumber.invalid && phonenumber.errors.minlength && phonenumber.errors.maxlength">
+        Phone number should be between 7 and 10 characters!
+    </span>
+
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+  </form>
+  <div>
+    <h4>
+      Total combinations: {{count}}
+    </h4>
+  </div>
+</div> -->
+
+<!-- main app container -->
+<div class="card text-center m-3">
+  <h3 class="card-header">Alpha Numerical Generator</h3>
+  <div class="card-body">
+    <form id="phone_form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <label>
+          Phone Number:
+        </label>
+      </div>
+      <div>
+        <input formControlName="phonenumber">
+        <span *ngIf="(phonenumber.dirty || phonenumber.touched) && phonenumber.invalid && phonenumber.errors.minlength && phonenumber.errors.maxlength">
+          Phone number should be between 7 and 10 characters!
+      </span>
+  
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+      </div>
+    </form>
+
+    <h4>
+      Total combinations: {{count}}
+    </h4>
+
+      <div *ngFor="let item of pageOfItems">{{item}}</div>
+  </div>
+  <div class="card-footer pb-0 pt-3">
+      <jw-pagination [items]="combination" (changePage)="onChangePage($event)"></jw-pagination>
+  </div>
+</div>
